@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -17,6 +17,7 @@
 		C82073AC257F3E920002BC76 /* APIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = C82073AB257F3E920002BC76 /* APIService.swift */; };
 		C82073AE257F3EAD0002BC76 /* DiaryListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C82073AD257F3EAD0002BC76 /* DiaryListViewController.swift */; };
 		C82073B0257F3EC10002BC76 /* EditDiaryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C82073AF257F3EC10002BC76 /* EditDiaryViewController.swift */; };
+		C82073B2257F52480002BC76 /* DiaryListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C82073B1257F52480002BC76 /* DiaryListTableViewCell.swift */; };
 		E516B577C0BA5A74B0A61BCB /* Pods_DiaryApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 86A9CEAAA3DE082672D6B392 /* Pods_DiaryApp.framework */; };
 /* End PBXBuildFile section */
 
@@ -36,6 +37,7 @@
 		C82073AB257F3E920002BC76 /* APIService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIService.swift; sourceTree = "<group>"; };
 		C82073AD257F3EAD0002BC76 /* DiaryListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiaryListViewController.swift; sourceTree = "<group>"; };
 		C82073AF257F3EC10002BC76 /* EditDiaryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditDiaryViewController.swift; sourceTree = "<group>"; };
+		C82073B1257F52480002BC76 /* DiaryListTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiaryListTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -64,7 +66,6 @@
 				AB46CB0F464389F362C0AFF8 /* Pods-DiaryApp.debug.xcconfig */,
 				6B291A8E2BED487E5509DD92 /* Pods-DiaryApp.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -114,6 +115,7 @@
 		C82073A5257F3DD00002BC76 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				C82073B1257F52480002BC76 /* DiaryListTableViewCell.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -266,6 +268,7 @@
 				C8207393257F3DA40002BC76 /* SceneDelegate.swift in Sources */,
 				C82073AE257F3EAD0002BC76 /* DiaryListViewController.swift in Sources */,
 				C82073A9257F3E580002BC76 /* AppConstant.swift in Sources */,
+				C82073B2257F52480002BC76 /* DiaryListTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
