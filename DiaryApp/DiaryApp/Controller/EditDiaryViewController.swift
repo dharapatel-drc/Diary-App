@@ -7,31 +7,72 @@
 //
 
 import UIKit
-
+import CoreData
 class EditDiaryViewController: UIViewController {
-
+    
+    @IBOutlet weak var saveButton: UIButton!
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var titleTextView: UITextView!
     @IBOutlet weak var contentTextView: UITextView!
+    var diary: Diary?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        setupUI()
+        prefilledData()
+    }
+    
+    private func setupUI() {
+        saveButton.layer.cornerRadius = 5.0
+        saveButton.clipsToBounds = true
+    }
+    
+    func prefilledData() {
+        titleLabel.text = diary?.title ?? ""
+        titleTextView.text = diary?.title ?? ""
+        contentTextView.text = diary?.content ?? ""
+    }
+    
+    private func checkInput() -> Bool {
+        guard let title = titleTextView.text?.trim(),!title.isEmpty else {
+            UIAlertController.showAlert(self, message: UserMessage.emptyTitle)
+            return false
+        }
+        
+        guard let content = contentTextView.text?.trim(),!content.isEmpty else {
+            UIAlertController.showAlert(self, message: UserMessage.emptyContent)
+            return false
+        }
+        return true
+    }
+    
+    func updateDiary() {
+        let context = CoreDataStack.sharedInstance.persistentContainer.viewContext
+        let request = NSFetchRequest<NSFetchRequestResult>(entityName: Constant.entityName)
+        request.predicate = NSPredicate(format: "\(WSParams.id) = %@",diary?.id ?? "")
+        do {
+            let record = try context.fetch(request)
+            if let records = record as? [NSManagedObject] {
+                if records.count > 0 {
+                    records.first?.setValue(titleTextView.text, forKey: WSParams.title)
+                    records.first?.setValue(contentTextView.text, forKey: WSParams.content)
+                }
+                CoreDataStack.sharedInstance.saveContext()
+                self.navigationController?.popViewController(animated: true)
+            }
+        } catch {
+            print("Unable to fetch managed objects for entity Todo.")
+        }
+        
     }
     
     @IBAction func backButtonTapped(_ sender: Any) {
+        self.navigationController?.popViewController(animated: true)
     }
     
     @IBAction func saveButtonTapped(_ sender: Any) {
+        if checkInput() {
+            updateDiary()
+        }
     }
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }
