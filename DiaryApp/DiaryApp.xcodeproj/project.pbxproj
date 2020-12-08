@@ -17,9 +17,13 @@
 		C82073AC257F3E920002BC76 /* APIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = C82073AB257F3E920002BC76 /* APIService.swift */; };
 		C82073AE257F3EAD0002BC76 /* DiaryListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C82073AD257F3EAD0002BC76 /* DiaryListViewController.swift */; };
 		C82073B0257F3EC10002BC76 /* EditDiaryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C82073AF257F3EC10002BC76 /* EditDiaryViewController.swift */; };
+		E516B577C0BA5A74B0A61BCB /* Pods_DiaryApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 86A9CEAAA3DE082672D6B392 /* Pods_DiaryApp.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		6B291A8E2BED487E5509DD92 /* Pods-DiaryApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DiaryApp.release.xcconfig"; path = "Target Support Files/Pods-DiaryApp/Pods-DiaryApp.release.xcconfig"; sourceTree = "<group>"; };
+		86A9CEAAA3DE082672D6B392 /* Pods_DiaryApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DiaryApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		AB46CB0F464389F362C0AFF8 /* Pods-DiaryApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DiaryApp.debug.xcconfig"; path = "Target Support Files/Pods-DiaryApp/Pods-DiaryApp.debug.xcconfig"; sourceTree = "<group>"; };
 		C820738D257F3DA40002BC76 /* DiaryApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DiaryApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C8207390257F3DA40002BC76 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C8207392257F3DA40002BC76 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -39,17 +43,38 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E516B577C0BA5A74B0A61BCB /* Pods_DiaryApp.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		4FACD0A15F1FAEF8059340F4 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				86A9CEAAA3DE082672D6B392 /* Pods_DiaryApp.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		632645596EB15795C1CE5FAE /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				AB46CB0F464389F362C0AFF8 /* Pods-DiaryApp.debug.xcconfig */,
+				6B291A8E2BED487E5509DD92 /* Pods-DiaryApp.release.xcconfig */,
+			);
+			name = Pods;
+			path = Pods;
+			sourceTree = "<group>";
+		};
 		C8207384257F3DA40002BC76 = {
 			isa = PBXGroup;
 			children = (
 				C820738F257F3DA40002BC76 /* DiaryApp */,
 				C820738E257F3DA40002BC76 /* Products */,
+				632645596EB15795C1CE5FAE /* Pods */,
+				4FACD0A15F1FAEF8059340F4 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -126,9 +151,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = C82073A1257F3DA60002BC76 /* Build configuration list for PBXNativeTarget "DiaryApp" */;
 			buildPhases = (
+				E1B39C004C517526B3B49F5D /* [CP] Check Pods Manifest.lock */,
 				C8207389257F3DA40002BC76 /* Sources */,
 				C820738A257F3DA40002BC76 /* Frameworks */,
 				C820738B257F3DA40002BC76 /* Resources */,
+				449144ABBE74F3E039288FEF /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -184,6 +211,48 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		449144ABBE74F3E039288FEF /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-DiaryApp/Pods-DiaryApp-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-DiaryApp/Pods-DiaryApp-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-DiaryApp/Pods-DiaryApp-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		E1B39C004C517526B3B49F5D /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-DiaryApp-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		C8207389257F3DA40002BC76 /* Sources */ = {
@@ -338,6 +407,7 @@
 		};
 		C82073A2257F3DA60002BC76 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = AB46CB0F464389F362C0AFF8 /* Pods-DiaryApp.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -355,6 +425,7 @@
 		};
 		C82073A3257F3DA60002BC76 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 6B291A8E2BED487E5509DD92 /* Pods-DiaryApp.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
